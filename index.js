@@ -1,23 +1,30 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer")
 const getFunctions = require("./utils/generateMarkdown.js")
+const fs = require("fs");
 
 
 
 // TODO: Create an array of questions for user input
 const questions = [
-    "Would you like to create a proffesional README.md",
-    "Fantastic, first lets pick a name for your actual .md file. Note: we will add the '.md' for you.",
     "What is the title of your project/repo?",
     "Please write a short paragraph describing your app:",
     "Please insert a link or file pathway for a screenshot: ",
     "Write a description for your screenshot",
-    ""
-    
+    "Please write installation instructions for your user: ",
+    "Please describe usage of your product",
+    "Please select a license you wish to user, if any",
+    "Please give contribution guidelines to your users here: ",
+    "Please give test instructions to your users here: ",
+    "Please enter your github profile name",
+    "Please enter your email",
 ];
 
+// .join("/n")
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (event) => { console.log("ERROR") })
+ }
 
 // TODO: Create a function to initialize app
 function init() { }
@@ -25,48 +32,53 @@ function init() { }
 // Function call to initialize app
 init();
 inquirer.prompt([{
-    name: "ifUserReadme",
-    message: "Would you like to create a proffesional README.md",
-    type: "confirm",
-}, {
-    name: "readmeFileName",
-    message: "Fantastic, first lets pick a name for your actual .md file. Note: we will add the '.md' for you.",
-    type: "input",
-}, {
     name: "title",
-    message: "What is the title of your project/repo?",
+    message: questions[0],
     type: "input",
 }, {
     name: "about",
-    message: "Please write a short paragraph describing your app: ",
+    message: questions[1],
     type: "input",
 }, {
     name: "SS",
-    message: "Please insert a link or file pathway for a screenshot: ",
+    message: questions[2],
     type: "input",
 }, {
     name: "ssDesc",
-    message: "Write a description for your screenshot",
+    message: questions[3],
     type: "input",
 }, {
-    name: "screenShot",
-    message: "Fantastic, please intsert your pathway or link.",
+    name: "installation",
+    message: questions[4],
     type: "input",
 }, {
-    name: "screenShot",
-    message: "Fantastic, please intsert your pathway or link.",
+    name: "usage",
+    message: questions[5],
     type: "input",
 }, {
-    name: "screenShot",
-    message: "Fantastic, please intsert your pathway or link.",
+    name: "license",
+    message: questions[6],
+    type: "list",
+    choices: ["none", "Apache", "Boost", "Eclipse", "GNU", "IBM", "ISC", "MIT", "Mozilla", "Perl"]
+}, {
+    name: "contribution",
+    message: questions[7],
+    type: "input",
+}, {
+    name: "instructions",
+    message: questions[8],
+    type: "input",
+}, {
+    name: "github",
+    message: questions[9],
+    type: "input",
+}, {
+    name: "email",
+    message: questions[10],
     type: "input",
 }]).then(function (data) {
-    if (data.ifUserReadme === true) {
-        const fs = require("fs")
-        const pathfinder = require("path")
-        fs.writeFile(pathfinder.join("C:\\Users\\dom18\\desktop\\bootcamp\\README-genny1\\" + data.readmeFileName +".md"), "Testresult", (event) => { console.log("ERROR") })
-        console.log(getFunctions(data))
-    }
+ console.log(getFunctions(data))
+ writeToFile(data.title + ".md", getFunctions(data))
 })
 
 ///////title
