@@ -29,11 +29,6 @@ function generateMarkdown(data) {
 6. [Questions](#questions)\n
 
 
- ## ${data.title}
- ![screenshot](${data.screenShot}) \n
- ${data.ssDesc}
-
-
  ## Installation
  ${data.installation}
 

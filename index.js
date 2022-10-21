@@ -8,8 +8,6 @@ const fs = require("fs");
 const questions = [
     "What is the title of your project/repo?",
     "Please write a short paragraph describing your app:",
-    "Please insert a link or file pathway for a screenshot: ",
-    "Write a description for your screenshot",
     "Please write installation instructions for your user: ",
     "Please describe usage of your product",
     "Please select a license you wish to user, if any",
@@ -21,7 +19,7 @@ const questions = [
 
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (event) => { console.log("ERROR") })
+    fs.writeFile(fileName, data, (event) => { console.log("COMPLETE!") })
  }
 
 // TODO: Create a function to initialize app
@@ -37,42 +35,34 @@ inquirer.prompt([{
     name: "about",
     message: questions[1],
     type: "input",
-}, {
-    name: "SS",
+},  {
+    name: "installation",
     message: questions[2],
     type: "input",
 }, {
-    name: "ssDesc",
+    name: "usage",
     message: questions[3],
     type: "input",
 }, {
-    name: "installation",
-    message: questions[4],
-    type: "input",
-}, {
-    name: "usage",
-    message: questions[5],
-    type: "input",
-}, {
     name: "license",
-    message: questions[6],
+    message: questions[4],
     type: "list",
     choices: ["none", "Apache", "Boost", "Eclipse", "GNU", "IBM", "ISC", "MIT", "Mozilla", "Perl"]
 }, {
     name: "contribution",
-    message: questions[7],
+    message: questions[5],
     type: "input",
 }, {
     name: "instructions",
-    message: questions[8],
+    message: questions[6],
     type: "input",
 }, {
     name: "github",
-    message: questions[9],
+    message: questions[7],
     type: "input",
 }, {
     name: "email",
-    message: questions[10],
+    message: questions[8],
     type: "input",
 }]).then(function (data) {
  console.log(getFunctions(data))
