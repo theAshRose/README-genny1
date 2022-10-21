@@ -1,11 +1,11 @@
 
-const inquirer = require("inquirer")
-const getFunctions = require("./utils/generateMarkdown.js")
-const fs = require("fs");
+const inquirer = require("inquirer")//inquirer
+const getFunctions = require("./utils/generateMarkdown.js")//using our "generateMarkdown.js" file
+const fs = require("fs"); //pulling fs node in
 
 
 
-const questions = [
+const questions = [//useless array i could have skipped
     "What is the title of your project/repo?",
     "Please write a short paragraph describing your app:",
     "Please write installation instructions for your user: ",
@@ -17,15 +17,13 @@ const questions = [
     "Please enter your email",
 ];
 
-
-function writeToFile(fileName, data) {
+function writeToFile(fileName, data) {///writefile function
     fs.writeFile(fileName, data, (event) => { console.log("COMPLETE!") })
  }
 
-// TODO: Create a function to initialize app
 function init() {}
 
-// Function call to initialize app
+//questions for user
 init();
 inquirer.prompt([{
     name: "title",
@@ -65,6 +63,5 @@ inquirer.prompt([{
     message: questions[8],
     type: "input",
 }]).then(function (data) {
- console.log(getFunctions(data))
- writeToFile("README.md", getFunctions(data))
+ writeToFile("sampleREADME.md", getFunctions(data))//calling function from other page with data from this one
 })

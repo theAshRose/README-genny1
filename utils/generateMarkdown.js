@@ -41,14 +41,14 @@ function generateMarkdown(data) {
  ${data.license}
 
 
- ## Contribution Guidelines
+ ## Contributing
  ${data.contribution}
 
 
- ## Test Instructions
+ ## Tests
  ${data.instructions}
 
- ## Questions? Contact Me:
+ ## Questions
  --[Author's Github](https://github.com/${data.github}) \n
  --Email me: ${data.email}
 
