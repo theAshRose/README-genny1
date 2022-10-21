@@ -40,7 +40,7 @@
  Test ins
 
  ## Questions? Contact Me:
- --![Author's Github](https://github.com/theDomConrad) 
+ --[Author's Github](https://github.com/theDomConrad) 
 
  --Email me: them.and.us.2013@Gmail.com
 
