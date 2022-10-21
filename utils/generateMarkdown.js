@@ -49,7 +49,7 @@ function generateMarkdown(data) {
  ${data.instructions}
 
  ## Questions? Contact Me:
- --![Author's Github](https://github.com/${data.github}) \n
+ --[Author's Github](https://github.com/${data.github}) \n
  --Email me: ${data.email}
 
  Thank you for visiting!
