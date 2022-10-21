@@ -36,10 +36,10 @@
  There are guidelines
 
 
- ## Test Instructions
+ ## Test
  Test ins
 
- ## Questions? Contact Me:
+ ## Questions
  --[Author's Github](https://github.com/theDomConrad) 
 
  --Email me: them.and.us.2013@Gmail.com
