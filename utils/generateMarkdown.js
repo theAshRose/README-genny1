@@ -21,12 +21,12 @@ function generateMarkdown(data) {
 
 
  ## Table of Contents:
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [License](#License)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
 4. [Contributing](#Contributing)
-5. [Tests](#Tests)
-6. [Questions](#Questions)
+5. [Tests](#tests)
+6. [Questions](#questions)
 
 
  ## ${data.title}
